@@ -5,10 +5,29 @@ export async function GET(){
     .catch(error => console.log(error))
     return NextResponse.json({'message':"from get data",data})
 }
-export function POST(){
-    return NextResponse.json({message:"post req"})
+export async function POST(request){
+    let data= await request.json()
+    console.log(data.name);
+    let {name ,age}=data
+    console.log(name,age,typeof(name));
+    if(!name || !age){
+        console.log("hi");
+    return NextResponse.json({message:"all feild require"})
+
+        
+    
+    
+    // if (!name || !batch){
+    // return NextResponse.json({message:"all feild require"})
+        
+    }else{
+    return NextResponse.json({message:"post req",data})
+       
+    }
+    
 }
 export function DELETE(){
+
     return NextResponse.json({message:'delete the res'})
 }
 
