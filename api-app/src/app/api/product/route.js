@@ -26,6 +26,16 @@ export async function POST(request){
     }
     
 }
+
+// export async function POST(request){
+//     let {searchParams}= new URL(request.url)
+//     let data = searchParams.get('name')
+//     let batch = searchParams.get('batch')
+   
+//     return NextResponse.json({message:'success',data,batch})
+// }
+
+
 export function DELETE(){
 
     return NextResponse.json({message:'delete the res'})
