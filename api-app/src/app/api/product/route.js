@@ -5,7 +5,9 @@ import usermodel from "@/app/lib/model/user"
 export async function GET() {
    try {
      await connectDb()
-    return NextResponse.json({message:"db connected successfully"})
+     const data= await usermodel.find() 
+
+    return NextResponse.json({message:"db connected successfully",data})
    } catch (error) {
     return NextResponse.json({message:"db not connected"})
    }

@@ -1,13 +1,15 @@
 "use client"
+import { useRouter } from 'next/navigation'
 import React, { useState } from 'react'
 
 const page = () => {
     const [Formdata,setFrmdata]=useState({})
+    const navigate = useRouter()
     function frmhandler(e){
         let {name,value}=e.target
         
         setFrmdata({...Formdata,[name]:value})
-    }
+    } 
     async function submitfrm(e){
         e.preventDefault()
         console.log(Formdata);
@@ -20,6 +22,7 @@ const page = () => {
         })
         let data =await res.json()
         console.log(data);
+        navigate.push('/usershow')
         
     }
 
