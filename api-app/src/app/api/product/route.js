@@ -27,6 +27,15 @@ export async function POST(request) {
     }
 }
 
+// export async function DELETE(request,{params}) {
+//     await connectDb()
+//     const {id} =await params
+//     console.log(id);
+    
+//     const res = await usermodel.findByIdAndDelete(id)
+//     return NextResponse.json({message:"user delete successfully", res})
+// }
+
 // export async function GET(){
 //    let data= await fetch('https://jsonplaceholder.typicode.com/posts/1')
 //     .then(response => response.json())
